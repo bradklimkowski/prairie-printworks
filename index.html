@@ -52,10 +52,13 @@
     h1, h2, h3, p { margin-top: 0; }
 
     h1 {
-      font-size: clamp(2.75rem, 7vw, 4.75rem);
-      line-height: 1.02;
-      letter-spacing: -0.04em;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.04;
+      letter-spacing: -0.045em;
       margin-bottom: 1.25rem;
+      max-width: 980px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     h2 {
@@ -172,17 +175,16 @@
     }
 
     .logo-mark {
-      width: 88px;
-      height: 88px;
-      margin: 0 auto 1.5rem;
-      border: 1px solid #4b5563;
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 2rem;
+      border: 1px solid #374151;
       border-radius: 999px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--muted);
-      font-size: 0.75rem;
       background: radial-gradient(circle at center, rgba(255,255,255,0.06), rgba(255,255,255,0.01));
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.03) inset;
     }
 
     .tagline {
@@ -317,13 +319,12 @@
     <section class="hero">
       <div class="container hero-inner">
         <div class="logo-mark">
-  <img src="logo.png" alt="Prairie Printworks Logo" style="width:64px;height:64px;object-fit:contain;">
-</div>
-        <div class="eyebrow" style="margin-bottom:0.35rem; color:#d4d4d4;">Prairie Printworks</div>
-        <div class="tagline">Design • Prototype • Fabricate</div>
-        <h1>Practical fabrication and mechanical design for real-world problems.</h1>
+          <img src="logo.png" alt="Prairie Printworks Logo" style="width:128px;height:128px;object-fit:contain;" />
+        </div>
+        
+        <h1>Custom fabrication. Real solutions.</h1>
         <p class="lead" style="margin-inline:auto;">
-          Prairie Printworks fabricates custom parts, prototypes, and mechanical solutions using practical design, rapid prototyping, and modern 3D printing.
+          Prairie Printworks turns broken parts, rough ideas, and one-off problems into functional real-world solutions.
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="start-project.html">Start a Project</a>
