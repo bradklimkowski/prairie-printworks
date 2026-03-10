@@ -68,8 +68,8 @@ border-bottom:1px solid var(--line);
 .nav-inner{
 display:flex;
 align-items:center;
-justify-content:space-between;
-min-height:72px;
+justify-content:center;
+min-height:84px;
 }
 
 .brand{
@@ -89,9 +89,52 @@ display:flex;
 gap:1.5rem;
 font-size:.9rem;
 color:var(--muted);
+align-items:center;
+justify-content:center;
 }
 
 .nav-links a:hover{color:var(--text)}
+
+.titleblock-shell{
+display:grid;
+grid-template-columns:1.4fr 1fr auto;
+border-left:1px solid rgba(255,255,255,0.14);
+border-right:1px solid rgba(255,255,255,0.14);
+background:rgba(0,0,0,0.18);
+}
+
+.tb-cell{
+min-height:82px;
+padding:.85rem 1rem;
+border-right:1px solid rgba(255,255,255,0.12);
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+
+.tb-cell:last-child{border-right:none}
+.tb-brand{align-items:flex-start}
+.tb-nav{flex-direction:row}
+.tb-cta{align-items:flex-end}
+
+.titlebar-bottom{
+position:sticky;
+bottom:0;
+z-index:25;
+background:rgba(8,8,8,0.94);
+backdrop-filter:blur(10px);
+border-top:1px solid var(--line);
+}
+
+.footer-meta{
+font-family:"Courier New", monospace;
+font-size:.7rem;
+letter-spacing:.14em;
+text-transform:uppercase;
+color:rgba(255,255,255,0.58);
+gap:.18rem;
+}
+.footer-right{align-items:flex-end;text-align:right}
 
 /* ===================== BUTTONS ===================== */
 
@@ -490,21 +533,23 @@ color:var(--muted);
 
 <body>
 
-<header class="navbar">
+<header class="navbar titlebar">
 <div class="container nav-inner">
-<div>
-<div class="brand">Prairie Printworks</div>
-<div class="brand-sub">Design • Prototype • Fabricate</div>
+<div class="titleblock-shell titleblock-top">
+  <div class="tb-cell tb-brand">
+    <div class="brand">Prairie Printworks</div>
+    <div class="brand-sub">Design • Prototype • Fabricate</div>
+  </div>
+  <div class="tb-cell tb-nav nav-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="blog.html">Blog</a>
+  </div>
+  <div class="tb-cell tb-cta">
+    <a class="btn btn-primary" href="start-project.html">Start a Project</a>
+  </div>
 </div>
-
-<nav class="nav-links">
-<a href="index.html">Home</a>
-<a href="services.html">Services</a>
-<a href="projects.html">Projects</a>
-<a href="blog.html">Blog</a>
-</nav>
-
-<a class="btn btn-primary" href="start-project.html">Start a Project</a>
 </div>
 </header>
 
@@ -639,11 +684,22 @@ Prairie Printworks turns broken parts, rough ideas, and one-off problems into fu
 
 </main>
 
-<footer>
+<footer class="titlebar-bottom">
 <div class="container">
-<div>Prairie Printworks</div>
-<div style="margin-top:.4rem">Design • Prototype • Fabricate</div>
-<div style="margin-top:.4rem">Illinois</div>
+  <div class="titleblock-shell titleblock-bottom">
+    <div class="tb-cell">
+      <div class="brand">Prairie Printworks</div>
+      <div class="brand-sub">Design • Prototype • Fabricate</div>
+    </div>
+    <div class="tb-cell footer-meta">
+      <div>Project Site</div>
+      <div>Illinois</div>
+    </div>
+    <div class="tb-cell footer-meta footer-right">
+      <div>Sheet H-01</div>
+      <div>Rev A</div>
+    </div>
+  </div>
 </div>
 </footer>
 
