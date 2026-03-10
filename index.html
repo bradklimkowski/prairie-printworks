@@ -112,9 +112,7 @@ img{max-width:100%;display:block}
   color:rgba(255,255,255,0.9);
 }
 
-.nav-inner{
-  min-height:70px;
-}
+.nav-inner{min-height:70px}
 
 .titleblock-strip{
   display:grid;
@@ -170,9 +168,7 @@ img{max-width:100%;display:block}
   text-transform:uppercase;
 }
 
-.strip-meta{
-  gap:.18rem;
-}
+.strip-meta{gap:.18rem}
 
 .drafting-meta-row{
   display:grid;
@@ -192,7 +188,6 @@ img{max-width:100%;display:block}
 .nav-links{
   display:grid;
   grid-template-columns:repeat(4,1fr);
-  gap:0;
   align-items:stretch;
   height:100%;
   min-height:70px;
@@ -290,6 +285,49 @@ img{max-width:100%;display:block}
   text-transform:uppercase;
 }
 
+/* section headings */
+.section-header{
+  margin-bottom:2rem;
+  position:relative;
+  padding-left:5.8rem;
+}
+
+.section-kicker{
+  position:absolute;
+  left:0;
+  top:.2rem;
+  font-family:"Courier New",monospace;
+  font-size:.64rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.48);
+}
+
+.section-kicker::after{
+  content:"";
+  position:absolute;
+  left:100%;
+  top:50%;
+  width:3.7rem;
+  height:1px;
+  background:rgba(255,255,255,0.18);
+  margin-left:.8rem;
+}
+
+.section-title{
+  margin:0 0 .35rem;
+  font-size:clamp(1.65rem,3vw,2.4rem);
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  line-height:1.05;
+}
+
+.section-sub{
+  margin:0;
+  color:var(--muted);
+  max-width:760px;
+}
+
 /* hero */
 .hero{
   border-bottom:1px solid var(--line);
@@ -366,15 +404,63 @@ img{max-width:100%;display:block}
 .zone-left-c{left:1.1rem;top:62%}
 .zone-left-d{left:1.1rem;top:84%}
 
-.dim-note{
+/* annotation callouts */
+.callout{
   position:absolute;
+  z-index:3;
+  pointer-events:none;
   font-family:"Courier New",monospace;
   font-size:.62rem;
   letter-spacing:.14em;
   text-transform:uppercase;
-  color:rgba(255,255,255,0.42);
-  z-index:2;
+  color:rgba(255,255,255,0.46);
 }
+
+.callout-label{
+  position:absolute;
+  white-space:nowrap;
+}
+
+.callout-line-h,
+.callout-line-v{
+  position:absolute;
+  background:rgba(255,255,255,0.18);
+}
+
+.callout-line-h{height:1px}
+.callout-line-v{width:1px}
+
+.callout-arrow{
+  position:absolute;
+  width:8px;
+  height:8px;
+  border-top:1px solid rgba(255,255,255,0.22);
+  border-right:1px solid rgba(255,255,255,0.22);
+  transform:rotate(45deg);
+}
+
+.callout-1{left:12%;top:8.7rem;width:180px;height:64px}
+.callout-1 .callout-label{left:0;top:0}
+.callout-1 .callout-line-h{left:78px;top:9px;width:70px}
+.callout-1 .callout-line-v{left:148px;top:9px;height:36px}
+.callout-1 .callout-arrow{left:144px;top:39px}
+
+.callout-2{left:calc(50% + 14rem);top:31%;width:150px;height:78px}
+.callout-2 .callout-label{left:0;top:0}
+.callout-2 .callout-line-h{left:44px;top:9px;width:56px}
+.callout-2 .callout-line-v{left:100px;top:9px;height:50px}
+.callout-2 .callout-arrow{left:96px;top:54px}
+
+.callout-3{left:calc(50% + 14rem);top:38%;width:150px;height:68px}
+.callout-3 .callout-label{left:0;top:0}
+.callout-3 .callout-line-h{left:30px;top:9px;width:66px}
+.callout-3 .callout-line-v{left:96px;top:9px;height:40px}
+.callout-3 .callout-arrow{left:92px;top:44px}
+
+.callout-4{left:calc(50% - 24rem);top:45%;width:170px;height:60px}
+.callout-4 .callout-label{left:0;top:0}
+.callout-4 .callout-line-h{left:78px;top:9px;width:56px}
+.callout-4 .callout-arrow{left:128px;top:5px}
 
 .logo{
   max-width:780px;
@@ -464,7 +550,41 @@ h1{
   border-bottom:1px solid var(--line);
 }
 .card p{color:var(--muted)}
-.project{overflow:hidden;padding:0}
+
+.project{
+  overflow:hidden;
+  padding:0;
+  border-radius:0;
+  background:linear-gradient(180deg,#101010,#0a0a0a);
+}
+
+.project::before{
+  content:"DETAIL";
+  position:absolute;
+  top:.85rem;
+  left:1rem;
+  width:auto;
+  height:auto;
+  border:none;
+  font-family:"Courier New",monospace;
+  font-size:.58rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.42);
+}
+
+.project::after{
+  content:"";
+  position:absolute;
+  left:1rem;
+  right:1rem;
+  bottom:1rem;
+  height:1px;
+  width:auto;
+  border:none;
+  background:rgba(255,255,255,0.08);
+}
+
 .project-img{
   aspect-ratio:16/10;
   border-bottom:1px solid var(--line);
@@ -478,8 +598,47 @@ h1{
   background:
     repeating-linear-gradient(to right,rgba(255,255,255,0.03) 0 1px,transparent 1px 40px),
     repeating-linear-gradient(to bottom,rgba(255,255,255,0.03) 0 1px,transparent 1px 40px);
+  position:relative;
 }
-.project-body{padding:1.4rem}
+
+.project-img::before{
+  content:"";
+  position:absolute;
+  inset:14px;
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+.project-img::after{
+  content:"FIG.";
+  position:absolute;
+  right:16px;
+  bottom:12px;
+  font-family:"Courier New",monospace;
+  font-size:.56rem;
+  letter-spacing:.18em;
+  color:rgba(255,255,255,0.36);
+}
+
+.project-body{
+  padding:1.25rem 1.4rem 1.55rem;
+  position:relative;
+}
+
+.project-body h3{
+  margin:.2rem 0 .45rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+}
+
+.project-ref{
+  display:block;
+  margin-bottom:.55rem;
+  font-family:"Courier New",monospace;
+  font-size:.58rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.42);
+}
 
 /* bottom title strip */
 .titlebar-bottom{
@@ -511,10 +670,24 @@ h1{
   .titleblock-strip{grid-template-columns:1.4fr .9fr}
   .nav-links,.strip-meta-secondary{display:none}
   .strip-cell{min-height:60px;padding:.42rem .65rem}
+
+  .section-header{
+    padding-left:0;
+  }
+  .section-kicker{
+    position:relative;
+    display:inline-block;
+    top:auto;
+    left:auto;
+    margin-bottom:.9rem;
+  }
+  .section-kicker::after{
+    display:none;
+  }
+
   .hero-inner{min-height:auto;padding:.7rem 0 3.5rem}
   .hero-frame{inset:.8rem .8rem .8rem .8rem}
-  .dim-note{display:none}
-  .zone{display:none}
+  .zone,.callout{display:none}
   .logo-wrap{padding:.55rem 0 .25rem}
   .logo-ring{width:min(76vw,420px);height:min(76vw,420px)}
   .logo-dashed-circle{width:min(88vw,520px);height:min(88vw,520px)}
@@ -586,10 +759,32 @@ h1{
     <div class="zone zone-left-c">C</div>
     <div class="zone zone-left-d">D</div>
 
-    <div class="dim-note" style="left:20%; top:10rem;">REF. 820 MM</div>
-    <div class="dim-note" style="left:calc(50% + 15rem); top:34%;">Ø 520</div>
-    <div class="dim-note" style="left:calc(50% + 15rem); top:40%;">R 40</div>
-    <div class="dim-note" style="left:calc(50% - 23rem); top:46%;">Centerline</div>
+    <div class="callout callout-1">
+      <span class="callout-label">REF. 820 MM</span>
+      <span class="callout-line-h"></span>
+      <span class="callout-line-v"></span>
+      <span class="callout-arrow"></span>
+    </div>
+
+    <div class="callout callout-2">
+      <span class="callout-label">Ø 520</span>
+      <span class="callout-line-h"></span>
+      <span class="callout-line-v"></span>
+      <span class="callout-arrow"></span>
+    </div>
+
+    <div class="callout callout-3">
+      <span class="callout-label">R 40</span>
+      <span class="callout-line-h"></span>
+      <span class="callout-line-v"></span>
+      <span class="callout-arrow"></span>
+    </div>
+
+    <div class="callout callout-4">
+      <span class="callout-label">Centerline</span>
+      <span class="callout-line-h"></span>
+      <span class="callout-arrow"></span>
+    </div>
 
     <div class="logo logo-wrap">
       <div class="logo-ring"></div>
@@ -608,7 +803,12 @@ h1{
 
 <section class="section">
   <div class="container">
-    <h2>Practical design and fabrication services</h2>
+    <div class="section-header">
+      <div class="section-kicker">Section 01</div>
+      <h2 class="section-title">Practical Design and Fabrication Services</h2>
+      <p class="section-sub">Capabilities built around real parts, real constraints, and real-world use.</p>
+    </div>
+
     <div class="grid-3" style="margin-top:2rem">
       <article class="card">
         <h3>Prototyping & Fabrication</h3>
@@ -628,25 +828,35 @@ h1{
 
 <section class="section">
   <div class="container">
-    <h2>Selected Prairie Printworks projects</h2>
+    <div class="section-header">
+      <div class="section-kicker">Section 02</div>
+      <h2 class="section-title">Selected Prairie Printworks Projects</h2>
+      <p class="section-sub">Examples of product development, reverse engineering, and one-off mechanical solutions.</p>
+    </div>
+
     <div class="grid-3" style="margin-top:2rem">
       <article class="card project">
         <div class="project-img">Project Image</div>
         <div class="project-body">
+          <span class="project-ref">Detail A-1</span>
           <h3>Product Development</h3>
           <p>Wall-mounted wipe holder system designed for everyday use.</p>
         </div>
       </article>
+
       <article class="card project">
         <div class="project-img">Project Image</div>
         <div class="project-body">
+          <span class="project-ref">Detail A-2</span>
           <h3>Reverse Engineering</h3>
           <p>Replacement component recreated from a damaged part.</p>
         </div>
       </article>
+
       <article class="card project">
         <div class="project-img">Project Image</div>
         <div class="project-body">
+          <span class="project-ref">Detail A-3</span>
           <h3>Mechanical Solution</h3>
           <p>Custom bracket designed where off-the-shelf solutions did not exist.</p>
         </div>
@@ -657,8 +867,12 @@ h1{
 
 <section class="section">
   <div class="container" style="text-align:center">
-    <h2>Have a problem to solve?</h2>
-    <p class="lead">Send a sketch, idea, or broken part. Prairie Printworks will determine the best path forward.</p>
+    <div class="section-header" style="max-width:760px; margin:0 auto 2rem; padding-left:0;">
+      <div class="section-kicker" style="position:relative; left:auto; top:auto; display:inline-block;">Section 03</div>
+      <h2 class="section-title">Have a Problem to Solve?</h2>
+      <p class="section-sub" style="margin:0 auto;">Send a sketch, idea, or broken part. Prairie Printworks will determine the best path forward.</p>
+    </div>
+
     <div class="hero-actions" style="margin-top:2rem">
       <a class="btn btn-primary" href="start-project.html">Start a Project</a>
     </div>
