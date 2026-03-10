@@ -219,6 +219,10 @@ img{max-width:100%;display:block}
   border-top:1px solid rgba(255,255,255,0.05);
 }
 
+.mobile-nav{
+  display:none;
+}
+
 .strip-cta{
   align-items:stretch;
   justify-content:stretch;
@@ -404,7 +408,7 @@ img{max-width:100%;display:block}
 .zone-left-c{left:1.1rem;top:62%}
 .zone-left-d{left:1.1rem;top:84%}
 
-/* annotation callouts */
+/* realistic callouts */
 .callout{
   position:absolute;
   z-index:3;
@@ -413,7 +417,7 @@ img{max-width:100%;display:block}
   font-size:.62rem;
   letter-spacing:.14em;
   text-transform:uppercase;
-  color:rgba(255,255,255,0.46);
+  color:rgba(255,255,255,0.50);
 }
 
 .callout-label{
@@ -424,7 +428,7 @@ img{max-width:100%;display:block}
 .callout-line-h,
 .callout-line-v{
   position:absolute;
-  background:rgba(255,255,255,0.18);
+  background:rgba(255,255,255,0.20);
 }
 
 .callout-line-h{height:1px}
@@ -434,33 +438,33 @@ img{max-width:100%;display:block}
   position:absolute;
   width:8px;
   height:8px;
-  border-top:1px solid rgba(255,255,255,0.22);
-  border-right:1px solid rgba(255,255,255,0.22);
+  border-top:1px solid rgba(255,255,255,0.24);
+  border-right:1px solid rgba(255,255,255,0.24);
   transform:rotate(45deg);
 }
 
-.callout-1{left:12%;top:8.7rem;width:180px;height:64px}
+.callout-1{left:14%;top:7.6rem;width:260px;height:80px}
 .callout-1 .callout-label{left:0;top:0}
-.callout-1 .callout-line-h{left:78px;top:9px;width:70px}
-.callout-1 .callout-line-v{left:148px;top:9px;height:36px}
-.callout-1 .callout-arrow{left:144px;top:39px}
+.callout-1 .callout-line-h{left:82px;top:9px;width:128px}
+.callout-1 .callout-line-v{left:210px;top:9px;height:48px}
+.callout-1 .callout-arrow{left:206px;top:52px}
 
-.callout-2{left:calc(50% + 14rem);top:31%;width:150px;height:78px}
+.callout-2{left:calc(50% + 15rem);top:46%;width:155px;height:54px}
 .callout-2 .callout-label{left:0;top:0}
-.callout-2 .callout-line-h{left:44px;top:9px;width:56px}
-.callout-2 .callout-line-v{left:100px;top:9px;height:50px}
-.callout-2 .callout-arrow{left:96px;top:54px}
+.callout-2 .callout-line-h{left:44px;top:9px;width:64px}
+.callout-2 .callout-line-v{left:108px;top:-34px;height:43px}
+.callout-2 .callout-arrow{left:104px;top:-37px}
 
-.callout-3{left:calc(50% + 14rem);top:38%;width:150px;height:68px}
+.callout-3{left:calc(50% + 16rem);top:56%;width:145px;height:62px}
 .callout-3 .callout-label{left:0;top:0}
-.callout-3 .callout-line-h{left:30px;top:9px;width:66px}
-.callout-3 .callout-line-v{left:96px;top:9px;height:40px}
-.callout-3 .callout-arrow{left:92px;top:44px}
+.callout-3 .callout-line-h{left:30px;top:9px;width:48px}
+.callout-3 .callout-line-v{left:78px;top:-16px;height:25px}
+.callout-3 .callout-arrow{left:74px;top:-19px}
 
-.callout-4{left:calc(50% - 24rem);top:45%;width:170px;height:60px}
+.callout-4{left:calc(50% - 20.5rem);top:63%;width:170px;height:26px}
 .callout-4 .callout-label{left:0;top:0}
-.callout-4 .callout-line-h{left:78px;top:9px;width:56px}
-.callout-4 .callout-arrow{left:128px;top:5px}
+.callout-4 .callout-line-h{left:82px;top:9px;width:62px}
+.callout-4 .callout-arrow{left:138px;top:5px}
 
 .logo{
   max-width:780px;
@@ -667,13 +671,38 @@ h1{
   .grid-3{grid-template-columns:1fr}
   .nav-revbar-inner{grid-template-columns:1fr 1fr}
   .rev-cell:nth-child(n+3){display:none}
-  .titleblock-strip{grid-template-columns:1.4fr .9fr}
-  .nav-links,.strip-meta-secondary{display:none}
+  .titleblock-strip{grid-template-columns:1.5fr .9fr}
+  .strip-meta-secondary,.strip-cta{display:none}
   .strip-cell{min-height:60px;padding:.42rem .65rem}
 
-  .section-header{
-    padding-left:0;
+  .mobile-nav{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    border-left:1px solid rgba(255,255,255,0.14);
+    border-right:1px solid rgba(255,255,255,0.14);
+    border-top:1px solid rgba(255,255,255,0.08);
   }
+
+  .mobile-nav a{
+    min-height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-size:.68rem;
+    color:var(--muted);
+    border-right:1px solid rgba(255,255,255,0.09);
+    border-bottom:1px solid rgba(255,255,255,0.09);
+  }
+
+  .mobile-nav a:nth-child(2n){border-right:none}
+  .mobile-nav a:hover{
+    color:var(--text);
+    background:rgba(255,255,255,0.03);
+  }
+
+  .section-header{padding-left:0}
   .section-kicker{
     position:relative;
     display:inline-block;
@@ -681,9 +710,7 @@ h1{
     left:auto;
     margin-bottom:.9rem;
   }
-  .section-kicker::after{
-    display:none;
-  }
+  .section-kicker::after{display:none}
 
   .hero-inner{min-height:auto;padding:.7rem 0 3.5rem}
   .hero-frame{inset:.8rem .8rem .8rem .8rem}
@@ -694,6 +721,29 @@ h1{
   .footer-meta{font-size:.56rem}
   .brand{font-size:.82rem}
   .brand-sub{font-size:.62rem}
+}
+
+@media(max-width:640px){
+  .hero-actions{
+    flex-direction:column;
+    align-items:stretch;
+    width:min(320px,100%);
+    margin-left:auto;
+    margin-right:auto;
+  }
+
+  .hero-actions .btn{
+    width:100%;
+  }
+
+  .nav-revbar-inner{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .rev-cell{
+    font-size:.54rem;
+    padding:0 .55rem;
+  }
 }
 </style>
 </head>
@@ -741,6 +791,13 @@ h1{
         </div>
       </div>
     </div>
+
+    <nav class="mobile-nav" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="blog.html">Blog</a>
+    </nav>
   </div>
 </header>
 
