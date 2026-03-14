@@ -53,7 +53,7 @@ body::after{
   inset:0;
   pointer-events:none;
   z-index:1;
-  opacity:.88;
+  opacity:.9;
 
   filter: contrast(1.15) brightness(1.05);
   mix-blend-mode: screen;
@@ -65,16 +65,6 @@ body::after{
     radial-gradient(circle at 34% 56%, rgba(255,255,255,.5) 0 .8px, transparent 1px),
     repeating-linear-gradient(11deg, rgba(255,255,255,.025) 0 1px, transparent 1px 10px),
     linear-gradient(180deg, rgba(255,255,255,.025), transparent 18%, rgba(255,255,255,.04) 60%, transparent 100%),
-    url("https://www.transparenttextures.com/patterns/paper-fibers.png")
-  background-size:
-    180px 180px,
-    240px 240px,
-    220px 220px,
-    260px 260px,
-    12px 12px,
-    100% 100%,
-    200px 200px,
-    100% 100%;
     url("../images/cyanotype-background-edges.jpg");
   background-size:
     180px 180px,
@@ -152,7 +142,6 @@ main{
   background:rgba(16,55,84,0.72);
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--line);
-  background-size:48px 48px;
 }
 
 .nav-revbar{
