@@ -54,6 +54,10 @@ body::after{
   pointer-events:none;
   z-index:1;
   opacity:.9;
+
+  filter: contrast(1.15) brightness(1.05);
+  mix-blend-mode: screen;
+  
   background-image:
     radial-gradient(circle at 12% 18%, rgba(255,255,255,.9) 0 1px, transparent 1.2px),
     radial-gradient(circle at 74% 30%, rgba(255,255,255,.7) 0 .8px, transparent 1px),
