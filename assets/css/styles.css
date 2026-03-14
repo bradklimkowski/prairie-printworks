@@ -152,11 +152,10 @@ main{
   background:rgba(16,55,84,0.72);
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--line);
-
   background-image:
-    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
-  background-size:40px 40px;
+    linear-gradient(rgba(255,255,255,.012) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.012) 1px, transparent 1px);
+  background-size:48px 48px;
 }
 
 .nav-revbar{
