@@ -672,7 +672,7 @@ h1{
   font-size:.58rem;
   letter-spacing:.18em;
   text-transform:uppercase;
-  color:rgba(245,250,255,0.78);
+  color:#000;
 }
 
 .project::after{
@@ -687,7 +687,7 @@ h1{
 
 .project-img{
   aspect-ratio:16/10;
-  border-bottom:1px solid var(--line);
+  border-bottom:1px solid rgba(0,0,0,0.9);
   display:flex;
   justify-content:center;
   align-items:center;
@@ -712,7 +712,7 @@ h1{
   content:"";
   position:absolute;
   inset:14px;
-  border:1px solid rgba(245,250,255,0.2);
+  border:1px solid rgba(0,0,0,0.9);
 }
 
 .project-img::after{
@@ -723,7 +723,7 @@ h1{
   font-family:"Courier New",monospace;
   font-size:.56rem;
   letter-spacing:.18em;
-  color:rgba(245,250,255,0.62);
+  color:#000;
 }
 
 .project-body{
@@ -742,7 +742,7 @@ h1{
   font-size:.58rem;
   letter-spacing:.18em;
   text-transform:uppercase;
-  color:rgba(245,250,255,0.5);
+  color:#000;
 }
 
 /* FOOTER */
