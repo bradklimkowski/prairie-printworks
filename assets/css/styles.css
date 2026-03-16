@@ -19,8 +19,6 @@
   --max:1200px;
   --radius:18px;
 
-  --chrome-top:106px;
-  --chrome-bottom:42px;
 }
 
 *{box-sizing:border-box}
@@ -31,8 +29,6 @@ html{
 
 body{
   margin:0;
-  padding-top:var(--chrome-top);
-  padding-bottom:var(--chrome-bottom);
   overflow-x:hidden;
   color:var(--text);
   font-family:"Arial Narrow","Bahnschrift","Segoe UI",system-ui,sans-serif;
@@ -127,10 +123,8 @@ main{
 /* TOP FRAME / NAV */
 
 .navbar{
-  position:fixed;
+  position:sticky;
   top:0;
-  left:0;
-  right:0;
   z-index:50;
   background:rgba(16,55,84,0.72);
   backdrop-filter:blur(10px);
@@ -759,9 +753,7 @@ h1{
 /* FOOTER */
 
 .titlebar-bottom{
-  position:fixed;
-  left:0;
-  right:0;
+  position:sticky;
   bottom:0;
   z-index:35;
   background:rgba(16,55,84,0.72);
@@ -832,10 +824,6 @@ h1{
 /* RESPONSIVE */
 
 @media(max-width:960px){
-  :root{
-    --chrome-top:97px;
-    --chrome-bottom:38px;
-  }
   .grid-3{
     grid-template-columns:1fr;
   }
@@ -1399,5 +1387,38 @@ h1{
 
   .sheet-subtitle {
     font-size: 0.92rem;
+  }
+}
+
+
+/* GLOBAL CHROME PINNING OVERRIDES */
+:root{
+  --chrome-top:106px;
+  --chrome-bottom:42px;
+}
+
+body{
+  padding-top:var(--chrome-top);
+  padding-bottom:var(--chrome-bottom);
+}
+
+.navbar{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+}
+
+.titlebar-bottom{
+  position:fixed;
+  left:0;
+  right:0;
+  bottom:0;
+}
+
+@media(max-width:960px){
+  :root{
+    --chrome-top:97px;
+    --chrome-bottom:38px;
   }
 }
