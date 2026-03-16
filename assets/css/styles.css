@@ -122,8 +122,7 @@ main{
 /* TOP FRAME / NAV */
 
 .navbar{
-  position:sticky;
-  top:0;
+  position:static;
   z-index:50;
   background:rgba(16,55,84,0.72);
   backdrop-filter:blur(10px);
@@ -752,8 +751,7 @@ h1{
 /* FOOTER */
 
 .titlebar-bottom{
-  position:sticky;
-  bottom:0;
+  position:static;
   z-index:35;
   background:rgba(16,55,84,0.72);
   backdrop-filter:blur(10px);
