@@ -523,6 +523,8 @@ main{
   position:relative;
   z-index:2;
   filter:drop-shadow(0 20px 40px rgba(0,20,40,.25));
+  transform-style:preserve-3d;
+  perspective:1100px;
 }
 
 .logo-wrap{
@@ -533,6 +535,35 @@ main{
   width:100%;
   position:relative;
   z-index:2;
+  transform:translateZ(0);
+  animation:hero-float 8s ease-in-out infinite;
+  filter:drop-shadow(0 26px 45px rgba(0, 20, 40, .45));
+}
+
+.logo::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  bottom:3.2rem;
+  width:min(54vw, 480px);
+  height:74px;
+  transform:translateX(-50%);
+  background:radial-gradient(ellipse at center, rgba(8, 16, 28, .45) 0%, rgba(8, 16, 28, 0) 72%);
+  pointer-events:none;
+  z-index:1;
+  animation:hero-shadow-float 8s ease-in-out infinite;
+}
+
+@keyframes hero-float{
+  0%,
+  100%{transform:translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg) scale(1)}
+  50%{transform:translate3d(0, -14px, 46px) rotateX(2.2deg) rotateY(-2deg) scale(1.015)}
+}
+
+@keyframes hero-shadow-float{
+  0%,
+  100%{opacity:.52;transform:translateX(-50%) scale(.93)}
+  50%{opacity:.34;transform:translateX(-50%) scale(.82)}
 }
 
 .logo-ring,
