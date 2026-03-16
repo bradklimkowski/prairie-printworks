@@ -21,10 +21,14 @@
 }
 
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{
+  scroll-behavior:smooth;
+  overflow-x:clip;
+}
 
 body{
   margin:0;
+  overflow-x:hidden;
   color:var(--text);
   font-family:"Arial Narrow","Bahnschrift","Segoe UI",system-ui,sans-serif;
   line-height:1.6;
