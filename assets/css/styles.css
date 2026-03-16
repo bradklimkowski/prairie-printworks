@@ -1405,3 +1405,140 @@ h1{
     --chrome-bottom:38px;
   }
 }
+
+.page-shell {
+  width: min(var(--max), calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2.5rem 0 5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.page-hero {
+  border: 1px solid rgba(210, 235, 255, 0.26);
+  background: rgba(7, 29, 43, 0.72);
+  padding: 1.4rem 1.5rem;
+}
+
+.page-kicker {
+  margin: 0 0 0.4rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  opacity: 0.72;
+}
+
+.page-hero h1 {
+  margin: 0 0 0.6rem;
+  font-size: clamp(2rem, 3.8vw, 3rem);
+}
+
+.page-hero p {
+  margin: 0;
+  max-width: 64ch;
+  color: var(--muted);
+}
+
+.page-section {
+  margin-top: 1.35rem;
+  border: 1px solid rgba(210, 235, 255, 0.22);
+  background: rgba(7, 29, 43, 0.7);
+  padding: 1.4rem 1.5rem;
+}
+
+.projects-notebook-intro p {
+  max-width: 82ch;
+}
+
+.project-jump-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.7rem;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: rgba(245, 250, 255, 0.84);
+}
+
+.project-jump-link::after {
+  content: "→";
+}
+
+.project-intake-card-image .project-img a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.projects-notebook-list {
+  display: grid;
+  gap: 1.35rem;
+}
+
+.project-notebook {
+  border: 1px solid rgba(210, 235, 255, 0.28);
+  background: rgba(10, 35, 52, 0.72);
+  padding: 1.25rem;
+}
+
+.project-notebook-header h2 {
+  margin: 0 0 0.45rem;
+  font-size: clamp(1.35rem, 2.4vw, 2rem);
+}
+
+.project-notebook-header p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.project-notebook-meta {
+  margin-top: 1rem;
+}
+
+.project-notebook-layout {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 1rem;
+  align-items: start;
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+}
+
+.project-gallery-item {
+  border: 1px solid rgba(210, 235, 255, 0.22);
+  background: rgba(255, 255, 255, 0.02);
+  padding: 0.42rem;
+}
+
+.project-gallery-item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.project-gallery-item span {
+  display: block;
+  margin-top: 0.45rem;
+  text-align: center;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  opacity: 0.78;
+}
+
+@media (max-width: 900px) {
+  .project-notebook-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .project-gallery {
+    grid-template-columns: 1fr;
+  }
+}
