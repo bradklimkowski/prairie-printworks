@@ -756,6 +756,47 @@ h1{
   border-top:1px solid var(--line);
 }
 
+.titlebar-bottom .titleblock-strip{
+  grid-template-columns:1.6fr 1fr 1fr;
+}
+
+.titlebar-bottom .strip-cell{
+  min-height:40px;
+  padding:.28rem .6rem;
+  flex-direction:row;
+  align-items:center;
+  justify-content:flex-start;
+  gap:.38rem;
+  white-space:nowrap;
+}
+
+.titlebar-bottom .strip-label,
+.titlebar-bottom .brand,
+.titlebar-bottom .brand-sub{
+  margin:0;
+  line-height:1;
+}
+
+.titlebar-bottom .strip-label{
+  font-size:.5rem;
+}
+
+.titlebar-bottom .brand{
+  font-size:.7rem;
+  letter-spacing:.14em;
+}
+
+.titlebar-bottom .brand-sub{
+  font-size:.56rem;
+  letter-spacing:.07em;
+}
+
+.titlebar-bottom .footer-meta{
+  flex-direction:row;
+  align-items:center;
+  gap:.38rem;
+}
+
 .footer-meta{
   font-family:"Courier New",monospace;
   font-size:.6rem;
@@ -886,22 +927,29 @@ h1{
   }
 
   .titlebar-bottom .titleblock-strip{
-    grid-template-columns:1.2fr 1fr 1fr;
+    grid-template-columns:1.4fr 1fr 1fr;
   }
 
   .titlebar-bottom .strip-cell{
-    min-height:48px;
-    padding:.32rem .45rem;
+    min-height:36px;
+    padding:.24rem .4rem;
+    gap:.26rem;
   }
 
   .titlebar-bottom .brand{
-    font-size:.68rem;
-    letter-spacing:.16em;
+    font-size:.58rem;
+    letter-spacing:.12em;
   }
 
   .titlebar-bottom .brand-sub{
-    font-size:.54rem;
-    letter-spacing:.08em;
+    font-size:.5rem;
+    letter-spacing:.06em;
+  }
+
+  .titlebar-bottom .strip-label,
+  .titlebar-bottom .footer-meta{
+    font-size:.48rem;
+    letter-spacing:.1em;
   }
 
   .brand{
