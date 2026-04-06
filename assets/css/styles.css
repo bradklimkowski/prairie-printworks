@@ -618,6 +618,11 @@ h1{
   z-index:2;
 }
 
+.lead-secondary{
+  display:block;
+  font-size:.78em;
+}
+
 .hero-actions{
   margin-top:2rem;
   display:flex;
